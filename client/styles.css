@@ -109,6 +109,7 @@ header {
 #hero-banner {
   position: relative;
   width: 100%;
+  margin-bottom: 3rem;
   background-image: url("./assets/img/cat-dog-banner.jpg");
   background-size: cover;
   background-position: center;
@@ -140,7 +141,7 @@ header {
 }
 
 #hero-titles {
-  position: relative;
+  position: inherit;
   z-index: 1;
 }
 
@@ -189,6 +190,15 @@ header {
 #call-to-action-wrp a:hover {
   background-color: rgba(250, 249, 232, 1);
   color: #242424;
+}
+
+#mini-paws {
+  position: inherit;
+  width: 100%;
+  height: 60px;
+  background-image: url("./assets/img/paw-texture.png");
+  background-size: contain;
+  z-index: 1;
 }
 
 footer {
