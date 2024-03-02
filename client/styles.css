@@ -1,9 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300..900&family=Poppins:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&display=swap");
 
 :root {
-  --pink: #f18986;
+  --pink: #e98989;
   --green: #95d69c;
-  --beige: #fdfbda;
+  --beige: #faf9e8;
   --brown: #5a362e;
 }
 
@@ -86,17 +86,14 @@ body {
 
 header {
   width: 100%;
-  height: 7rem;
+  height: 3.5rem;
   padding: 1rem 0;
-  background-image: linear-gradient(
-    to bottom,
-    var(--pink) 50%,
-    var(--beige) 50%
-  );
+  background-color: var(--pink);
 }
 
 /* change to actual logo */
 #logo {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -106,6 +103,92 @@ header {
   border-radius: 50%;
   background-color: var(--beige);
   text-align: center;
+  z-index: 5;
+}
+
+#hero-banner {
+  position: relative;
+  width: 100%;
+  background-image: url("./assets/img/cat-dog-banner.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+/* add dark gradient behind text */
+#hero-banner::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0) 75%,
+    rgba(0, 0, 0, 0.5)
+  );
+}
+
+#titles-n-btns-wrp {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* banner height is defined here */
+  padding-top: 400px;
+  /* */
+  padding-bottom: 2rem;
+}
+
+#hero-titles {
+  position: relative;
+  z-index: 1;
+}
+
+#hero-titles h1 {
+  text-transform: uppercase;
+  color: var(--beige);
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 2.2rem;
+}
+
+#hero-titles h2 {
+  display: flex;
+  align-items: center;
+  color: var(--beige);
+  font-size: 1rem;
+}
+
+#call-to-action-wrp {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  width: 500px;
+  z-index: 1;
+}
+
+#call-to-action-wrp a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 380px;
+  height: 3.5rem;
+  border-radius: 10px;
+  border: solid 2px var(--beige);
+  background-color: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(1px);
+  color: var(--beige);
+  font-size: 1rem;
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+  transition-property: background-color, color;
+  transition: 0.1s ease-out;
+}
+
+#call-to-action-wrp a:hover {
+  background-color: rgba(250, 249, 232, 1);
+  color: #242424;
 }
 
 footer {
@@ -119,4 +202,21 @@ footer div p {
   font-weight: 600;
   text-align: right;
   line-height: 0.5rem;
+}
+
+@media screen and (max-width: 882px) {
+  #titles-n-btns-wrp {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  #call-to-action-wrp {
+    justify-content: center;
+    width: 100%;
+  }
+
+  #call-to-action-wrp a {
+    width: 100%;
+  }
 }
