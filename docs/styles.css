@@ -64,14 +64,14 @@ p {
 
 .note-block h3 {
   margin: 1rem 0 0 1rem;
-  color: white;
+  color: var(--beige);
   text-transform: uppercase;
   font-weight: 700;
   font-size: 1.3rem;
 }
 
 .note-block p {
-  color: white;
+  color: var(--beige);
   text-align: left;
 }
 
@@ -93,18 +93,12 @@ header {
   background-image: linear-gradient(12deg, var(--pink), var(--pink-light));
 }
 
-/* change to actual logo */
 #logo {
   position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   width: 5rem;
   aspect-ratio: 1/1;
-  border: solid 3px white;
+  border: solid 3px var(--pink);
   border-radius: 50%;
-  background-color: var(--beige);
-  text-align: center;
   z-index: 5;
 }
 
@@ -211,9 +205,9 @@ header {
   max-width: 500px;
   margin: 2rem auto 1rem auto;
   padding: 0.9rem 0;
-  border: solid 2px white;
+  border: solid 2px var(--beige);
   border-radius: 10px;
-  color: white;
+  color: var(--beige);
   font-weight: 600;
   text-decoration: none;
   transition: transform 0.2s ease-out;
@@ -247,11 +241,35 @@ footer {
   background-image: linear-gradient(12deg, var(--pink), var(--pink-light));
 }
 
-footer div p {
+footer .wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+footer .wrapper #img-wrp img {
+  width: 200px;
+}
+
+footer .wrapper #divisor {
+  width: 3px;
+  height: 100px;
+  background-color: var(--beige);
+  border-radius: 3px;
+}
+
+footer .wrapper #info-wrp .info-align {
+  display: flex;
+  align-items: center;
+}
+
+footer .wrapper #info-wrp .info-align p {
+  margin: 0.4rem 1rem;
+  color: var(--beige);
   font-size: 0.8rem;
   font-weight: 600;
-  text-align: right;
-  line-height: 0.5rem;
+  line-height: 1rem;
 }
 
 @media screen and (max-width: 882px) {
