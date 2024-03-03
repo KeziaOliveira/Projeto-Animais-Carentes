@@ -287,4 +287,23 @@ footer .wrapper #info-wrp .info-align p {
   #call-to-action-wrp a {
     width: 100%;
   }
+
+  footer {
+    padding-bottom: 2rem;
+  }
+
+  footer .wrapper {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  footer .wrapper #divisor {
+    display: none;
+  }
+
+  footer .wrapper #info-wrp {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
 }
