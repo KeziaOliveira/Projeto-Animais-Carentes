@@ -1,10 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300..900&family=Poppins:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&display=swap");
 
 :root {
-  --pink: #e98989;
+  --pink: #fd7e7e;
+  --pink-light: #faa89d;
   --green: #95d69c;
   --beige: #faf9e8;
-  --brown: #5a362e;
+  --brown: #473430;
+  --brown-dim: #745d58;
 }
 
 * {
@@ -33,6 +35,10 @@ p {
   font-style: normal;
   font-size: 2.5rem;
   text-align: center;
+  background: -webkit-linear-gradient(12deg, var(--pink), var(--pink-light));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .wrapper {
@@ -42,35 +48,31 @@ p {
   padding: 0 1rem;
 }
 
-.cards-wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1.5rem;
-  width: 100%;
-  margin: 3rem 0;
-}
-
-.card {
+.note-block {
   position: relative;
-  width: 230px;
-  aspect-ratio: 3/4.2;
-  margin-bottom: 4rem;
+  background-image: linear-gradient(12deg, var(--pink), var(--pink-light));
   border-radius: 10px;
-  background-color: var(--brown);
+  margin: 2rem 1rem;
+  padding: 0.6rem 1rem;
 }
 
-.card::after {
+.note-block img {
   position: absolute;
-  bottom: 0;
-  left: 50%;
-  content: "";
-  display: block;
-  width: 60%;
-  aspect-ratio: 1/1;
-  border-radius: 50%;
-  background-color: var(--pink);
-  transform: translate(-50%, 50%);
+  top: 2rem;
+  right: 2rem;
+}
+
+.note-block h3 {
+  margin: 1rem 0 0 1rem;
+  color: white;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 1.3rem;
+}
+
+.note-block p {
+  color: white;
+  text-align: left;
 }
 
 /* end */
@@ -88,7 +90,7 @@ header {
   width: 100%;
   height: 3.5rem;
   padding: 1rem 0;
-  background-color: var(--pink);
+  background-image: linear-gradient(12deg, var(--pink), var(--pink-light));
 }
 
 /* change to actual logo */
@@ -109,7 +111,7 @@ header {
 #hero-banner {
   position: relative;
   width: 100%;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
   background-image: url("./assets/img/cat-dog-banner.jpg");
   background-size: cover;
   background-position: center;
@@ -125,8 +127,8 @@ header {
   height: 100%;
   background-image: linear-gradient(
     to bottom,
-    rgba(0, 0, 0, 0) 75%,
-    rgba(0, 0, 0, 0.5)
+    rgba(0, 0, 0, 0) 50%,
+    rgba(0, 0, 0, 0.7)
   );
 }
 
@@ -177,7 +179,6 @@ header {
   border-radius: 10px;
   border: solid 2px var(--beige);
   background-color: rgba(0, 0, 0, 0.2);
-  backdrop-filter: blur(1px);
   color: var(--beige);
   font-size: 1rem;
   font-weight: 500;
@@ -201,10 +202,49 @@ header {
   z-index: 1;
 }
 
+#donate-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  width: calc(100% - 2rem);
+  max-width: 500px;
+  margin: 2rem auto 1rem auto;
+  padding: 0.9rem 0;
+  border: solid 2px white;
+  border-radius: 10px;
+  color: white;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform 0.2s ease-out;
+}
+
+#donate-btn:hover {
+  transform: scale(102%);
+}
+
+#heart-pulse {
+  position: inherit;
+  animation: pulse 0.9s forwards infinite linear;
+  animation-play-state: paused;
+}
+
+@keyframes pulse {
+  5% {
+    transform: scale(120%);
+  }
+  35% {
+    transform: scale(90%);
+  }
+  50% {
+    transform: scale(100%);
+  }
+}
+
 footer {
   width: 100%;
   padding: 1rem 0;
-  background-color: var(--pink);
+  background-image: linear-gradient(12deg, var(--pink), var(--pink-light));
 }
 
 footer div p {
