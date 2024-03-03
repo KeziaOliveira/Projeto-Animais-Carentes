@@ -384,3 +384,9 @@ footer .wrapper #info-wrp .info-align p {
     flex-direction: column;
   }
 }
+
+@media screen and (max-width: 400px) {
+  html {
+    font-size: 16px;
+  }
+}
