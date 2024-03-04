@@ -2,7 +2,7 @@
 
 :root {
   --pink: #fd7e7e;
-  --pink-light: #faa89d;
+  --pink-light: #f1a096;
   --green: #a2c9aa;
   --beige: #faf9e8;
   --brown: #473430;
@@ -19,6 +19,11 @@
   font-style: normal;
 }
 
+html {
+  font-size: 18px;
+  background-color: var(--beige);
+}
+
 /* the most general definitions and classes go here */
 p {
   margin: 1rem;
@@ -28,7 +33,6 @@ p {
 }
 
 .title {
-  color: var(--pink);
   font-family: "Frank Ruhl Libre", serif;
   font-optical-sizing: auto;
   font-weight: 600;
@@ -48,44 +52,35 @@ p {
   padding: 0 1rem;
 }
 
-.note-block {
+.pink-block {
   position: relative;
   background-image: linear-gradient(12deg, var(--pink), var(--pink-light));
   border-radius: 10px;
   margin: 2rem 1rem;
   padding: 0.6rem 1rem;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
-.note-block img {
+.pink-block img {
   position: absolute;
   top: 2rem;
   right: 2rem;
 }
 
-.note-block h3 {
+.pink-block h3 {
   margin: 1rem 0 0 1rem;
-  color: var(--beige);
+  color: white;
   text-transform: uppercase;
   font-weight: 700;
   font-size: 1.3rem;
 }
 
-.note-block p {
-  color: var(--beige);
+.pink-block p {
+  color: white;
   text-align: left;
 }
 
 /* end */
-
-html {
-  font-size: 18px;
-}
-
-body {
-  height: 100vh;
-  background-color: var(--beige);
-}
 
 header {
   width: 100%;
@@ -100,7 +95,7 @@ header {
   aspect-ratio: 1/1;
   border: solid 3px var(--pink);
   border-radius: 50%;
-  z-index: 5;
+  z-index: 1;
 }
 
 #hero-banner {
@@ -127,7 +122,7 @@ header {
   );
 }
 
-#titles-n-btns-wrp {
+#hero-banner .wrapper {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -144,7 +139,7 @@ header {
 
 #hero-titles h1 {
   text-transform: uppercase;
-  color: var(--beige);
+  color: white;
   font-size: 2rem;
   font-weight: 600;
   line-height: 2.2rem;
@@ -153,7 +148,7 @@ header {
 #hero-titles h2 {
   display: flex;
   align-items: center;
-  color: var(--beige);
+  color: white;
   font-size: 1rem;
 }
 
@@ -161,7 +156,6 @@ header {
   position: relative;
   display: flex;
   justify-content: flex-end;
-  width: 500px;
   z-index: 1;
 }
 
@@ -172,19 +166,19 @@ header {
   width: 380px;
   height: 3.5rem;
   border-radius: 10px;
-  border: solid 2px var(--beige);
+  border: solid 2px white;
   background-color: rgba(0, 0, 0, 0.2);
-  color: var(--beige);
+  color: white;
   font-size: 1rem;
-  font-weight: 500;
+  font-weight: 600;
   text-decoration: none;
   cursor: pointer;
-  transition-property: background-color, color;
+  transition-property: all;
   transition: 0.1s ease-out;
 }
 
 #call-to-action-wrp a:hover {
-  background-color: rgba(250, 249, 232, 1);
+  background-color: rgba(255, 255, 255, 1);
   color: #242424;
 }
 
@@ -206,9 +200,9 @@ header {
   max-width: 500px;
   margin: 2rem auto 1rem auto;
   padding: 0.9rem 0;
-  border: solid 2px var(--beige);
+  border: solid 2px white;
   border-radius: 10px;
-  color: var(--beige);
+  color: white;
   font-weight: 600;
   text-decoration: none;
   transition: transform 0.2s ease-out;
@@ -218,7 +212,7 @@ header {
   transform: scale(102%);
 }
 
-#heart-pulse {
+#heart-icon {
   position: inherit;
   animation: pulse 0.9s forwards infinite linear;
   animation-play-state: paused;
@@ -236,14 +230,14 @@ header {
   }
 }
 
-#alt-card-wrp {
+#cards-wrp {
   display: flex;
   flex-direction: column;
   gap: 1rem;
   margin: 1rem;
 }
 
-.note-card-alt {
+.card {
   position: relative;
   width: 100%;
   height: 340px;
@@ -253,19 +247,19 @@ header {
   overflow: hidden;
 }
 
-.note-card-alt:nth-child(1) {
+.card:nth-child(1) {
   background-image: url("./assets/img/dog-bath.jpg");
 }
 
-.note-card-alt:nth-child(2) {
+.card:nth-child(2) {
   background-image: url("./assets/img/ostentacao-felina.jpg");
 }
 
-.note-card-alt:nth-child(3) {
+.card:nth-child(3) {
   background-image: url("./assets/img/dog-with-ipad.jpg");
 }
 
-.note-card-info {
+.card-info {
   position: absolute;
   top: 75%;
   width: 100%;
@@ -279,22 +273,22 @@ header {
   transition: all 0.2s ease-out;
 }
 
-.note-card-info img {
+.card-info img {
   position: absolute;
   top: 2rem;
   right: 2rem;
 }
 
-.note-card-info h3 {
-  color: var(--beige);
+.card-info h3 {
+  color: white;
   text-transform: uppercase;
   line-height: 1.1rem;
   font-weight: 700;
 }
 
-.note-card-info p {
+.card-info p {
   margin: 1.4rem 0;
-  color: var(--beige);
+  color: white;
 }
 
 footer {
@@ -303,7 +297,7 @@ footer {
   margin-top: calc(25px + 1rem);
   padding: 1rem 0;
   background-image: linear-gradient(12deg, var(--brown), var(--brown-dim));
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 footer::before {
@@ -314,7 +308,7 @@ footer::before {
   width: 100%;
   height: 15px;
   background-image: linear-gradient(12deg, var(--pink), var(--pink-light));
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   z-index: -1;
 }
 
@@ -325,23 +319,23 @@ footer .wrapper {
   gap: 1rem;
 }
 
-footer .wrapper #img-wrp img {
+#img-wrp img {
   width: 200px;
 }
 
-footer .wrapper #divisor {
+#divider {
   width: 3px;
   height: 100px;
   background-color: var(--beige);
   border-radius: 3px;
 }
 
-footer .wrapper #info-wrp .info-align {
+.info-flex {
   display: flex;
   align-items: center;
 }
 
-footer .wrapper #info-wrp .info-align p {
+.info-flex p {
   margin: 0.4rem 1rem;
   color: var(--beige);
   font-size: 0.8rem;
@@ -350,7 +344,7 @@ footer .wrapper #info-wrp .info-align p {
 }
 
 @media screen and (max-width: 882px) {
-  #titles-n-btns-wrp {
+  #hero-banner .wrapper {
     flex-direction: column;
     align-items: flex-start;
     gap: 1rem;
@@ -374,11 +368,11 @@ footer .wrapper #info-wrp .info-align p {
     gap: 0;
   }
 
-  footer .wrapper #divisor {
+  #divider {
     display: none;
   }
 
-  footer .wrapper #info-wrp {
+  #info-wrp {
     display: flex;
     align-items: center;
     flex-direction: column;

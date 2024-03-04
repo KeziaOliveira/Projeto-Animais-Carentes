@@ -1,16 +1,19 @@
-// play/pause heart pulse animation on donation button
-document.getElementById("donate-btn").addEventListener("mouseover", () => {
-  document.getElementById("heart-pulse").style.animationPlayState = "running";
+// play/pause heart pulse animation when hovering donation button
+const donateBtn = document.getElementById("donate-btn");
+const heartIcon = document.getElementById("heart-icon");
 
-  document.getElementById("donate-btn").addEventListener("mouseout", () => {
-    document.getElementById("heart-pulse").style.animationPlayState = "paused";
+donateBtn.addEventListener("mouseover", () => {
+  heartIcon.style.animationPlayState = "running";
+
+  donateBtn.addEventListener("mouseout", () => {
+    heartIcon.style.animationPlayState = "paused";
   });
 });
 
-// pull info card up on .note-card-alt hover
-const altCardList = document.querySelectorAll(".note-card-alt");
+// slide up info card when hovering .card elements
+const cardsList = document.querySelectorAll(".card");
 
-altCardList.forEach((card) => {
+cardsList.forEach((card) => {
   card.addEventListener("mouseover", () => {
     card.children[0].style.top = 0;
     card.children[0].style.backdropFilter = "blur(2px)";
