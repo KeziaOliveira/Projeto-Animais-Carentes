@@ -80,6 +80,21 @@ p {
   text-align: left;
 }
 
+.outside-link {
+  color: var(--pink-light);
+  text-decoration: none;
+}
+
+.outside-link::after {
+  content: "";
+  display: inline-block;
+  width: 0.8rem;
+  height: 0.8rem;
+  margin-left: 0.15rem;
+  background-image: url("./assets/icons/outside-link.svg");
+  background-size: contain;
+}
+
 /* end */
 
 header {
@@ -291,6 +306,26 @@ header {
   color: white;
 }
 
+#social-wrp {
+  padding: 1rem;
+}
+
+#social-wrp h2 {
+  font-weight: 700;
+  line-height: 3rem;
+}
+
+#social-wrp a {
+  display: flex;
+  align-items: center;
+  line-height: 2rem;
+  text-transform: uppercase;
+}
+
+#social-wrp a img {
+  margin-right: 0.4rem;
+}
+
 footer {
   position: relative;
   width: 100%;
@@ -343,6 +378,12 @@ footer .wrapper {
   line-height: 1rem;
 }
 
+#credits p {
+  color: var(--beige);
+  font-size: 0.8rem;
+  text-align: center;
+}
+
 @media screen and (max-width: 882px) {
   #hero-banner .wrapper {
     flex-direction: column;
@@ -377,10 +418,18 @@ footer .wrapper {
     align-items: center;
     flex-direction: column;
   }
+
+  #credits {
+    margin-top: 2rem;
+  }
 }
 
 @media screen and (max-width: 400px) {
   html {
     font-size: 16px;
+  }
+
+  .card-info p {
+    margin: 2rem 0;
   }
 }
