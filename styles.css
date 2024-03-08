@@ -282,15 +282,15 @@ header {
 }
 
 .card:nth-child(1) .card-img {
-  background-image: url("./assets/img/dog-bath.jpg");
+  background-image: url("./assets/img/dog-bath-blob.png");
 }
 
 .card:nth-child(2) .card-img {
-  background-image: url("./assets/img/ostentacao-felina.jpg");
+  background-image: url("./assets/img/ostentacao-felina-blob.png");
 }
 
 .card:nth-child(3) .card-img {
-  background-image: url("./assets/img/dog-with-ipad.jpg");
+  background-image: url("./assets/img/dog-with-ipad-blob.png");
 }
 
 .card-info {
@@ -299,7 +299,7 @@ header {
   padding: 2rem;
 }
 
-.card-info img {
+.card-info img:not(.social-icon) {
   position: absolute;
   top: 2rem;
   right: 2rem;
@@ -319,26 +319,11 @@ header {
 
 .card-info p {
   margin: 1.4rem 0;
-  text-align: left;
+  /* text-align: left; */
 }
 
-#social-wrp {
-  padding: 1rem;
-}
-
-#social-wrp h2 {
-  font-weight: 700;
-  line-height: 3rem;
-}
-
-#social-wrp a {
-  display: flex;
-  align-items: center;
-  line-height: 2rem;
-}
-
-#social-wrp a img {
-  margin-right: 0.4rem;
+.social-anchor {
+  margin-right: 2rem;
 }
 
 footer {
