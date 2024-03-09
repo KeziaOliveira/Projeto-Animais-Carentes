@@ -103,11 +103,16 @@ p {
   gap: 0.7rem;
   padding: 0.8rem 1rem;
   border-radius: 10px;
-  background-image: linear-gradient(12deg, var(--green), var(--green-light));
+  background-image: linear-gradient(12deg, var(--pink), var(--pink-light));
   color: white;
   text-decoration: none;
   text-transform: uppercase;
   font-weight: 600;
+  transition: opacity 0.2s ease-out;
+}
+
+.whatsapp-link:hover {
+  opacity: 0.9;
 }
 
 .whatsapp-link::after {
@@ -293,7 +298,9 @@ header {
   position: relative;
   display: flex;
   align-items: center;
+  gap: 2rem;
   width: 100%;
+  margin: 1rem 0;
   background-size: cover;
   background-position: center;
   overflow-x: hidden;
@@ -322,13 +329,12 @@ header {
 .card-info {
   position: relative;
   width: 70%;
-  padding: 2rem;
 }
 
 .card-info img:not(.social-icon, .whatsapp-icon) {
   position: absolute;
-  top: 2rem;
-  right: 2rem;
+  top: 0;
+  right: 0;
 }
 
 .card-info h3 {
@@ -425,6 +431,27 @@ footer .wrapper {
     width: 100%;
   }
 
+  .card {
+    flex-direction: column;
+  }
+
+  .card-img {
+    width: 60%;
+  }
+
+  .card-info {
+    width: 100%;
+  }
+
+  .card-info p {
+    text-align: left;
+  }
+
+  .whatsapp-link {
+    display: flex;
+    justify-content: center;
+  }
+
   footer {
     padding-bottom: 2rem;
   }
@@ -452,9 +479,5 @@ footer .wrapper {
 @media screen and (max-width: 400px) {
   html {
     font-size: 16px;
-  }
-
-  .card-info p {
-    margin: 2rem 0;
   }
 }
