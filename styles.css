@@ -4,7 +4,6 @@
   --pink: #fd7e7e;
   --pink-light: #f1a096;
   --green: #a2c9aa;
-  --green-light: #a4dbaf;
   --beige: #faf9e8;
   --brown: #473430;
   --brown-dim: #745d58;
@@ -26,57 +25,71 @@ html {
 }
 
 /* the most general definitions and classes go here */
+.wrapper {
+  width: 100%;
+  max-width: 1000px;
+  margin: auto;
+  padding: 0 2rem;
+}
+
 p {
-  margin: 1rem;
+  margin: 1rem 0;
   line-height: 1.5rem;
   letter-spacing: 0.2px;
   text-align: justify;
 }
 
 .title {
-  font-family: "Frank Ruhl Libre", serif;
-  font-optical-sizing: auto;
-  font-weight: 600;
-  font-style: normal;
-  font-size: 2.5rem;
-  text-align: center;
+  margin: 1rem 0;
   background: -webkit-linear-gradient(12deg, var(--pink), var(--pink-light));
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
+  font-family: "Frank Ruhl Libre", serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 2.3rem;
+  text-align: center;
 }
 
-.wrapper {
-  width: 100%;
-  max-width: 1000px;
-  margin: auto;
-  padding: 0 1rem;
-}
-
-.pink-block {
-  position: relative;
-  background-image: linear-gradient(12deg, var(--pink), var(--pink-light));
-  border-radius: 10px;
-  margin: 2rem 1rem;
-  padding: 0.6rem 1rem;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-}
-
-.pink-block img {
-  position: absolute;
-  top: 2rem;
-  right: 2rem;
-}
-
-.pink-block h3 {
-  margin: 1rem 0 0 1rem;
-  color: white;
+.title-alt {
   text-transform: uppercase;
   font-weight: 700;
   font-size: 1.3rem;
 }
 
-.pink-block p {
+.pink-deg-bg {
+  background-image: linear-gradient(12deg, var(--pink), var(--pink-light));
+}
+
+.border-rad {
+  border-radius: 10px;
+}
+
+.drop-shadow {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.block {
+  position: relative;
+  margin: 2rem 0;
+  padding: 1rem;
+}
+
+.block img {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+}
+
+.block h3 {
+  margin: 0.5rem 1rem;
+  color: white;
+}
+
+.block p {
+  margin: 1rem;
   color: white;
   text-align: left;
 }
@@ -102,8 +115,6 @@ p {
   align-items: center;
   gap: 0.7rem;
   padding: 0.8rem 1rem;
-  border-radius: 10px;
-  background-image: linear-gradient(12deg, var(--pink), var(--pink-light));
   color: white;
   text-decoration: none;
   text-transform: uppercase;
@@ -130,7 +141,6 @@ p {
   display: inline-block;
   width: 500px;
   border: solid 2px var(--brown);
-  border-radius: 10px;
 }
 
 .pet-card img {
@@ -143,7 +153,6 @@ header {
   width: 100%;
   height: 3.5rem;
   padding: 1rem 0;
-  background-image: linear-gradient(12deg, var(--pink), var(--pink-light));
 }
 
 #logo {
@@ -158,7 +167,7 @@ header {
 #hero-banner {
   position: relative;
   width: 100%;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
   background-image: url("./assets/img/cat-dog-banner.jpg");
   background-size: cover;
   background-position: center;
@@ -222,7 +231,6 @@ header {
   justify-content: center;
   width: 380px;
   height: 3.5rem;
-  border-radius: 10px;
   border: solid 2px white;
   background-color: rgba(0, 0, 0, 0.2);
   color: white;
@@ -230,8 +238,7 @@ header {
   font-weight: 600;
   text-decoration: none;
   cursor: pointer;
-  transition-property: all;
-  transition: 0.1s ease-out;
+  transition: all 0.1s ease-out;
 }
 
 #call-to-action-wrp a:hover {
@@ -258,7 +265,6 @@ header {
   margin: 2rem auto 1rem auto;
   padding: 0.9rem 0;
   border: solid 2px white;
-  border-radius: 10px;
   color: white;
   font-weight: 600;
   text-decoration: none;
@@ -291,7 +297,7 @@ header {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  margin: 1rem;
+  margin: 1rem 0;
 }
 
 .card {
@@ -301,10 +307,6 @@ header {
   gap: 2rem;
   width: 100%;
   margin: 1rem 0;
-  background-size: cover;
-  background-position: center;
-  overflow-x: hidden;
-  overflow-y: auto;
 }
 
 .card-img {
@@ -333,14 +335,8 @@ header {
 
 .card-info img:not(.social-icon, .whatsapp-icon) {
   position: absolute;
-  top: 0;
+  top: 0.5rem;
   right: 0;
-}
-
-.card-info h3 {
-  text-transform: uppercase;
-  line-height: 1.1rem;
-  font-weight: 700;
 }
 
 .card-info h4 {
@@ -349,21 +345,16 @@ header {
   line-height: 1.2rem;
 }
 
-.card-info p {
-  margin: 1.4rem 0;
-}
-
 .social-anchor {
-  margin-right: 2rem;
+  margin-right: 1rem;
 }
 
 footer {
   position: relative;
   width: 100%;
-  margin-top: calc(25px + 1rem);
+  margin-top: calc(15px + 1rem);
   padding: 1rem 0;
   background-image: linear-gradient(12deg, var(--brown), var(--brown-dim));
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 footer::before {
@@ -374,8 +365,6 @@ footer::before {
   width: 100%;
   height: 15px;
   background-image: linear-gradient(12deg, var(--pink), var(--pink-light));
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  z-index: -1;
 }
 
 footer .wrapper {
@@ -416,6 +405,10 @@ footer .wrapper {
 }
 
 @media screen and (max-width: 882px) {
+  .wrapper {
+    padding: 0 1rem;
+  }
+
   #hero-banner .wrapper {
     flex-direction: column;
     align-items: flex-start;
