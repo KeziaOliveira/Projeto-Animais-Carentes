@@ -114,7 +114,8 @@ p {
   display: inline-flex;
   align-items: center;
   gap: 0.7rem;
-  padding: 0.8rem 1rem;
+  padding: 1rem;
+  margin: 1.5rem 0;
   color: white;
   text-decoration: none;
   text-transform: uppercase;
