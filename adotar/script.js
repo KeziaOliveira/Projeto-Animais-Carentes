@@ -6,7 +6,7 @@ const dogSwitch = document.getElementById("switch-dogs");
 // if true, allows respective cat/dog list to be shown. index 0 is for dogs, index 1 is for cats
 let filter = [true, true];
 
-populatePage(filter);
+// populatePage(filter);
 
 function populatePage([showDogs, showCats]) {
   petListEl.innerHTML = "";
@@ -67,3 +67,18 @@ catSwitch.addEventListener("click", () => {
     populatePage(filter);
   }
 });
+
+function toggleDescription(el) {
+  const originalBtnText = `Sobre ${el.parentNode.childNodes[3].childNodes[3].innerHTML} &darr;`;
+  const cardDescWrp = el.parentNode.childNodes[1];
+
+  if (cardDescWrp.style.top == "0%") {
+    cardDescWrp.style.top = "100%";
+
+    el.innerHTML = originalBtnText;
+  } else {
+    cardDescWrp.style.top = "0%";
+
+    el.innerHTML = "Esconder descrição";
+  }
+}

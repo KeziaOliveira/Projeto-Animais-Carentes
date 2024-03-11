@@ -96,7 +96,34 @@
         </section>
 
         <!-- imports pet list -->
-        <section id="pet-list-wrp"></section>
+        <section id="pet-list-wrp">
+          <div class="pet-card">
+            <div class="pet-card-description-wrp">
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. In
+                harum at saepe, dolore modi!
+              </p>
+            </div>
+            <div class="pet-card-info">
+              <img
+                class="pet-card-gender female"
+                src="../assets/icons/female.svg"
+                alt="icone de sexo do animal"
+              />
+              <p class="pet-card-name">Amy</p>
+            </div>
+            <!-- <button class="pet-card-adopt-btn female" type="button">
+              Adotar
+            </button> -->
+            <button
+              class="pet-card-show-desc-btn"
+              type="button"
+              onclick="toggleDescription(this)"
+            >
+              Sobre Amy &darr;
+            </button>
+          </div>
+        </section>
       </div>
     </main>
     <footer class="drop-shadow">
