@@ -198,14 +198,6 @@ p {
   overflow: hidden;
 }
 
-.pet-card p {
-  margin: 0.5rem;
-  text-align: left;
-  font-size: 0.9rem;
-  line-height: 1.3rem;
-  color: transparent;
-}
-
 .pet-card-img {
   position: relative;
   width: 100%;
@@ -633,5 +625,9 @@ footer .wrapper {
 @media screen and (max-width: 400px) {
   html {
     font-size: 16px;
+  }
+  .pet-card {
+    width: 100%;
+    max-width: none;
   }
 }
