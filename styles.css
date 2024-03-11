@@ -61,7 +61,14 @@ p {
   font-size: 1.3rem;
 }
 
+.title-alt-small {
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 1rem;
+}
+
 .bold {
+  color: inherit;
   font-weight: 600;
 }
 
@@ -102,6 +109,11 @@ p {
 }
 
 .block h3 {
+  margin: 0.5rem 1rem;
+  color: white;
+}
+
+.block h4 {
   margin: 0.5rem 1rem;
   color: white;
 }
