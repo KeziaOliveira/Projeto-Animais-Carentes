@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300..900&family=Poppins:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&display=swap");
 
 :root {
   --pink: #fd7e7e;
@@ -25,6 +25,10 @@ html {
   background-color: var(--beige);
 }
 
+body {
+  min-height: 100vh;
+}
+
 /* the most general definitions and classes go here */
 .wrapper {
   width: 100%;
@@ -46,10 +50,7 @@ p {
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-family: "Frank Ruhl Libre", serif;
-  font-optical-sizing: auto;
   font-weight: 600;
-  font-style: normal;
   font-size: 2.3rem;
   text-align: center;
 }
@@ -70,6 +71,10 @@ p {
 
 .pink-deg-bg {
   background-image: linear-gradient(12deg, var(--pink), var(--pink-light));
+}
+
+.pink-deg-bg-alt {
+  background-image: linear-gradient(to right, var(--pink), var(--pink-light));
 }
 
 .border-rad {
@@ -150,7 +155,7 @@ p {
 .overlapping-bg-mask {
   position: absolute;
   width: 100%;
-  height: 500px;
+  height: 750px;
   background-color: var(--beige);
   z-index: 0;
 }
@@ -466,6 +471,29 @@ header {
   justify-content: space-evenly;
   gap: 1rem 0;
 }
+
+#filters-wrp {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+#switch-dogs,
+#switch-cats {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.7rem;
+  fill: var(--green);
+  border: none;
+  border-radius: 7px;
+  background-color: transparent;
+  cursor: pointer;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.15);
+}
+
+/* */
 
 footer {
   position: relative;
