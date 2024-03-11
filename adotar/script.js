@@ -30,6 +30,10 @@ function populatePage([showDogs, showCats]) {
       petListEl.innerHTML += `<div class="pet-card"><div class="pet-card-img" style="background-image: url('../data/images/${cat.image}-c.jpg')"><img class="pet-card-gender ${gender}" src="../assets/icons/${gender}.svg"><h2>${cat.name}</h2></div><p>${cat.description}</p><a class="whatsapp-link pink-deg-bg border-rad pet-card-a" href="https://wa.me/5527981667886?text=Ol%C3%A1%2C%20me%20interessei%20n${pronoum}%20${cat.name}%2C%20e%20gostaria%20de%20saber%20se%20el${call}%20ainda%20est%C3%A1%20dispon%C3%ADvel%20para%20ado%C3%A7%C3%A3o." target="_blank">Me adote</a></div>`;
     });
   }
+
+  if (!showDogs && !showCats) {
+    petListEl.innerHTML = `<p class="dim center-txt">Os filtros estão escondendo a lista de pets. <br />Por favor, use os botôes acima para ativar/desativar os filtros.</p>`;
+  }
 }
 
 dogSwitch.addEventListener("click", () => {
@@ -43,7 +47,7 @@ dogSwitch.addEventListener("click", () => {
     filter[0] = true;
 
     dogSwitch.style.boxShadow = "inset 0 0 5px rgba(0, 0, 0, 0.15)";
-    dogSwitch.style.fill = "var(--green)";
+    dogSwitch.style.fill = "var(--blue)";
     populatePage(filter);
   }
 });
@@ -59,7 +63,7 @@ catSwitch.addEventListener("click", () => {
     filter[1] = true;
 
     catSwitch.style.boxShadow = "inset 0 0 5px rgba(0, 0, 0, 0.15)";
-    catSwitch.style.fill = "var(--green)";
+    catSwitch.style.fill = "var(--blue)";
     populatePage(filter);
   }
 });
