@@ -6,7 +6,7 @@ const dogSwitch = document.getElementById("switch-dogs");
 // if true, allows respective cat/dog list to be shown. index 0 is for dogs, index 1 is for cats
 let filter = [true, true];
 
-// populatePage(filter);
+populatePage(filter);
 
 function populatePage([showDogs, showCats]) {
   petListEl.innerHTML = "";
@@ -17,7 +17,7 @@ function populatePage([showDogs, showCats]) {
       const pronoum = dog.isMale ? "o" : "a";
       const call = dog.isMale ? "e" : "a";
 
-      petListEl.innerHTML += `<div class="pet-card"><div class="pet-card-img" style="background-image: url('../data/images/${dog.image}-d.jpg')"><img class="pet-card-gender ${gender}" src="../assets/icons/${gender}.svg"><h2>${dog.name}</h2></div><a class="whatsapp-link pink-deg-bg border-rad pet-card-a" href="https://wa.me/5527981667886?text=Ol%C3%A1%2C%20me%20interessei%20n${pronoum}%20${dog.name}%2C%20e%20gostaria%20de%20saber%20se%20el${call}%20ainda%20est%C3%A1%20dispon%C3%ADvel%20para%20ado%C3%A7%C3%A3o." target="_blank">Adotar</a></div>`;
+      petListEl.innerHTML += `<div class="pet-card" style="background-image: url('../data/images/${dog.image}-d.jpg')"><div class="pet-card-description-wrp"><p>${dog.description}</p><p class="bold dim">Abrigad${pronoum} desde ${dog.withUsSince}.</p></div><div class="pet-card-info"><img class="pet-card-gender ${gender}" src="../assets/icons/${gender}.svg" alt="icone de sexo do animal" /><p class="pet-card-name">${dog.name}</p></div><a class="pet-card-adopt-btn ${gender}" href="https://wa.me/5527981667886?text=Ol%C3%A1%2C%20me%20interessei%20n${pronoum}%20${dog.name}%2C%20e%20gostaria%20de%20saber%20se%20el${call}%20ainda%20est%C3%A1%20dispon%C3%ADvel%20para%20ado%C3%A7%C3%A3o." target="_blank"><img src="../assets/icons/heart.svg" alt="icone de coração" /></a><button class="pet-card-show-desc-btn" type="button" onclick="toggleDescription(this)">Ler mais &darr;</button></div>`;
     });
   }
 
@@ -27,7 +27,7 @@ function populatePage([showDogs, showCats]) {
       const pronoum = cat.isMale ? "o" : "a";
       const call = cat.isMale ? "e" : "a";
 
-      petListEl.innerHTML += `<div class="pet-card"><div class="pet-card-img" style="background-image: url('../data/images/${cat.image}-c.jpg')"><img class="pet-card-gender ${gender}" src="../assets/icons/${gender}.svg"><h2>${cat.name}</h2></div><a class="whatsapp-link pink-deg-bg border-rad pet-card-a" href="https://wa.me/5527981667886?text=Ol%C3%A1%2C%20me%20interessei%20n${pronoum}%20${cat.name}%2C%20e%20gostaria%20de%20saber%20se%20el${call}%20ainda%20est%C3%A1%20dispon%C3%ADvel%20para%20ado%C3%A7%C3%A3o." target="_blank">Me adote</a></div>`;
+      petListEl.innerHTML += `<div class="pet-card" style="background-image: url('../data/images/${cat.image}-c.jpg')"><div class="pet-card-description-wrp"><p>${cat.description}</p></div><div class="pet-card-info"><img class="pet-card-gender ${gender}" src="../assets/icons/${gender}.svg" alt="icone de sexo do animal" /><p class="pet-card-name">${cat.name}</p></div><a class="pet-card-adopt-btn ${gender}" href="https://wa.me/5527981667886?text=Ol%C3%A1%2C%20me%20interessei%20n${pronoum}%20${cat.name}%2C%20e%20gostaria%20de%20saber%20se%20el${call}%20ainda%20est%C3%A1%20dispon%C3%ADvel%20para%20ado%C3%A7%C3%A3o." target="_blank"><img src="../assets/icons/heart.svg" alt="icone de coração" /></a><button class="pet-card-show-desc-btn" type="button" onclick="toggleDescription(this)">Ler mais &darr;</button></div>`;
     });
   }
 
@@ -36,6 +36,8 @@ function populatePage([showDogs, showCats]) {
   }
 }
 
+// toggle filters, restyles buttons
+// reruns function to populate page
 dogSwitch.addEventListener("click", () => {
   if (filter[0]) {
     filter[0] = false;
@@ -68,14 +70,15 @@ catSwitch.addEventListener("click", () => {
   }
 });
 
+// get this element's description wrapper and pulls it up
+// or down
 function toggleDescription(el) {
-  const originalBtnText = `Sobre ${el.parentNode.childNodes[3].childNodes[3].innerHTML} &darr;`;
-  const cardDescWrp = el.parentNode.childNodes[1];
+  const cardDescWrp = el.parentNode.childNodes[0];
 
   if (cardDescWrp.style.top == "0%") {
     cardDescWrp.style.top = "100%";
 
-    el.innerHTML = originalBtnText;
+    el.innerHTML = `Ler mais &darr;`;
   } else {
     cardDescWrp.style.top = "0%";
 
